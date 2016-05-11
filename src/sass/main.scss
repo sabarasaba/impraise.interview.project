@@ -92,3 +92,35 @@ body {
     }
   }
 }
+
+
+.module {
+  margin-top: 75px;
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+
+    .title {
+      margin: 0;
+      font-size: 23px;
+      font-weight: 300;
+      color: #555555;
+    }
+
+    .btn {
+      margin-left: 10px;
+
+      border: 0px;
+      background-color: transparent;
+      color: #eb4a42;
+      font-size: 16px;
+      cursor: pointer;
+      padding-bottom: 2px;
+    }
+  }
+
+  &_content {
+    margin-top: 50px;
+  }
+}

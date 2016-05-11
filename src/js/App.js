@@ -18,6 +18,17 @@ export default class App extends Component {
           <button className="form__button spaced" disabled>Shorten this link</button>
         </div>
 
+        <div className="module">
+          <div className="module__header">
+            <h2 className="title">Previously shortened by you</h2>
+            <button className="btn">Clear history</button>
+          </div>
+
+          <div className="module__content">
+
+          </div>
+        </div>
+
       </div>
     );
   }
