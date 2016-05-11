@@ -13,6 +13,11 @@ export default class App extends Component {
           </div>
         </header>
 
+        <div className="form form--inline">
+          <input className="form__input" type="text" placeholder="Paste the link you want to shorten here"/>
+          <button className="form__button spaced" disabled>Shorten this link</button>
+        </div>
+
       </div>
     );
   }
