@@ -30,17 +30,30 @@ body {
 // Header
 
 .header {
+  display: flex;
+  justify-content: space-between;
+
   &__section {
+    display: flex;
+    align-items: center;
+
+    &--baseline {
+      align-items: flex-end;
+      padding-bottom: 10px;
+    }
+
     &__title {
       font-size: 47px;
       text-decoration: underline;
       color: #eb4a42;
+      margin: 0;
     }
 
     &__subtitle {
       font-size: 16.5px;
       color: #aaaaaa;
       padding-bottom: 10px;
+      margin: 0;
     }
   }
 }
