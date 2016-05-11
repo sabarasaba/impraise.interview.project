@@ -1,4 +1,5 @@
 import React, { PropTypes, Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import UrlTableListItem from './UrlTableListItem';
 
@@ -12,23 +13,24 @@ class UrlTableList extends Component {
           <button className="btn">Clear history</button>
         </div>
 
-        <div className="module__content">
-          <table className="links-table">
-            <thead className="links-table__head">
-              <tr className="row">
-                <th className="link">Link</th>
-                <th className="visits">Visits</th>
-                <th className="timestamp">Last Visited</th>
-              </tr>
-            </thead>
+          <div className="module__content">
+            <table className="links-table">
+              <thead className="links-table__head">
+                <tr className="row">
+                  <th className="link">Link</th>
+                  <th className="visits">Visits</th>
+                  <th className="timestamp">Last Visited</th>
+                </tr>
+              </thead>
 
-            <tbody className="links-table__body">
-              {this.props.urls.map((item, key) => {
-                return <UrlTableListItem key={key} schema={item} />;
-              })}
-            </tbody>
-          </table>
-        </div>
+              <ReactCSSTransitionGroup component="tbody" transitionName="transitionIn" transitionEnterTimeout={0} transitionLeaveTimeout={1000}>
+                {this.props.urls.map((item, key) => {
+                  return <UrlTableListItem key={key} schema={item} />;
+                })}
+              </ReactCSSTransitionGroup>
+            </table>
+          </div>
+
       </div>
     );
   }

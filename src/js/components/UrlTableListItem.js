@@ -3,7 +3,6 @@ import React, { PropTypes, Component } from 'react';
 class UrlTableListItem extends Component {
 
   render () {
-    console.log(this.props);
     return (
       <tr className="row">
         <td className="link">

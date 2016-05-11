@@ -13,7 +13,7 @@
     color: $secondary-text-color;
   }
 
-  &__body {
+  tbody {
     display: block;
   }
 
@@ -89,4 +89,17 @@
       text-align: right;
     }
   }
+}
+
+
+.transitionIn-enter {
+  opacity: 0;
+  transform: rotateX(-90deg);
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
+}
+
+.transitionIn-enter.transitionIn-enter-active {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(.36,-0.64,.34,1.76);
 }
