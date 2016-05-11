@@ -25,7 +25,31 @@ export default class App extends Component {
           </div>
 
           <div className="module__content">
+            <table className="links-table">
+              <thead className="links-table__head">
+                <tr className="row">
+                  <th className="link">Link</th>
+                  <th className="visits">Visits</th>
+                  <th className="timestamp">Last Visited</th>
+                </tr>
+              </thead>
 
+              <tbody className="links-table__body">
+                <tr className="row">
+                  <td className="link">
+                    <a href="#" className="click-out">
+                      <span className="hover-content">Click to copy this link</span>
+                      <span className="shortened">
+                        https://shooooort.com/<strong>aSDJnpAn73</strong>
+                      </span>
+                      <span className="original">http://localhost:3000/</span>
+                    </a>
+                  </td>
+                  <td className="visits">0</td>
+                  <td className="timestamp">2 Hours ago</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
