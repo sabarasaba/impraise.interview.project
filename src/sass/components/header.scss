@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 45px;
+
+  &__section {
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      @media (max-width: $mobile-breakpoint) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &--baseline {
+      align-items: flex-end;
+      padding-bottom: 10px;
+    }
+
+    &__title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 47px;
+      text-decoration: underline;
+      color: $brand-color;
+      margin: 0;
+    }
+
+    &__subtitle {
+      font-size: 16.5px;
+      color: $secondary-text-color;
+      margin: 0;
+    }
+  }
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
+}

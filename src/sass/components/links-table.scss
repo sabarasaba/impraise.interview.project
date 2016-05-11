@@ -1,0 +1,92 @@
+.links-table {
+  display: block;
+
+  a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    font-weight: normal;
+  }
+
+  &__head {
+    display: block;
+    color: $secondary-text-color;
+  }
+
+  &__body {
+    display: block;
+  }
+
+  .row {
+    display: flex;
+    padding: 16px 0;
+
+    th, tr {
+      padding: 4px 0;
+      overflow: hidden;
+      font-weight: normal;
+      text-transform: uppercase;
+      font-size: 14px;
+      text-align: left;
+    }
+
+    td {
+      flex: 0 0 100%;
+    }
+
+    .link {
+      flex: 1 0 0;
+
+      .click-out {
+        .hover-content {
+          padding: 0 16px;
+          color: $brand-color;
+          background-color: transparent;
+          font-weight: lighter;
+          float: right;
+          opacity: 0;
+
+          transition: opacity 350ms;
+
+          @media (max-width: $mobile-breakpoint) {
+            display: none;
+          }
+        }
+
+        &:hover {
+          .hover-content {
+            opacity: 1;
+          }
+        }
+
+        .shortened {
+          display: block;
+          font-weight: 400;
+
+          strong {
+            color: $brand-color;
+            font-weight: inherit;
+          }
+        }
+
+        .original {
+          display: block;
+          color: $nonimportant-text-color;
+        }
+      }
+    }
+
+    .visits {
+      flex: 0 0 120px;
+
+      @media (max-width: $mobile-breakpoint) {
+        display: none;
+      }
+    }
+
+    .timestamp {
+      flex: 0 0 120px;
+      text-align: right;
+    }
+  }
+}

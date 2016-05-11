@@ -1,0 +1,26 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: $background-color;
+}
+
+body {
+  color: $primary-text-color;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  padding: 1rem;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  padding-top: 50px;
+  max-width: 900px;
+  margin: 0 auto;
+}
