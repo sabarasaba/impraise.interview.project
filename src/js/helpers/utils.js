@@ -3,4 +3,4 @@ export function isUrl(anotherone) {
   const regex = new RegExp(expression);
 
   return anotherone.match(regex);
-}
+};

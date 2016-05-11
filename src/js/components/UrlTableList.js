@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 import UrlTableListItem from './UrlTableListItem';
 
@@ -23,7 +23,9 @@ class UrlTableList extends Component {
             </thead>
 
             <tbody className="links-table__body">
-              <UrlTableListItem/>
+              {this.props.urls.map((item, key) => {
+                return <UrlTableListItem key={key} schema={item} />;
+              })}
             </tbody>
           </table>
         </div>
@@ -33,6 +35,7 @@ class UrlTableList extends Component {
 };
 
 UrlTableList.propTypes = {
+  urls: PropTypes.array.isRequired,
 };
 
 export default UrlTableList;

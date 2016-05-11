@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { PropTypes, Component } from 'react';
 
 class UrlTableListItem extends Component {
 
   render () {
+    console.log(this.props);
     return (
       <tr className="row">
         <td className="link">
@@ -11,7 +12,7 @@ class UrlTableListItem extends Component {
             <span className="shortened">
               https://shooooort.com/<strong>aSDJnpAn73</strong>
             </span>
-            <span className="original">http://localhost:3000/</span>
+            <span className="original">{this.props.schema}</span>
           </a>
         </td>
         <td className="visits">0</td>
@@ -22,6 +23,7 @@ class UrlTableListItem extends Component {
 };
 
 UrlTableListItem.propTypes = {
+  schema: PropTypes.string.isRequired
 };
 
 export default UrlTableListItem;
