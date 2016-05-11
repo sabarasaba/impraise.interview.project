@@ -1,3 +1,46 @@
-h1 {
-  color: red;
+$gray: #999999;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #F0F0F0;
+}
+
+body {
+  color: $gray;
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+// Header
+
+.header {
+  &__section {
+    &__title {
+      font-size: 47px;
+      text-decoration: underline;
+      color: #eb4a42;
+    }
+
+    &__subtitle {
+      font-size: 16.5px;
+      color: #aaaaaa;
+      padding-bottom: 10px;
+    }
+  }
 }
