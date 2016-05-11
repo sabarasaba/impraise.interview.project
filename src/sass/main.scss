@@ -10,6 +10,7 @@ $nonimportant-text-color: #CCCCCC;
 $disabled-button-background: #E0E0E0;
 $disabled-button-color: #BFBFBF;
 
+$mobile-breakpoint: 600px;
 
 
 *,
@@ -50,6 +51,12 @@ body {
     display: flex;
     align-items: center;
 
+    &:first-child {
+      @media (max-width: $mobile-breakpoint) {
+        margin-bottom: 15px;
+      }
+    }
+
     &--baseline {
       align-items: flex-end;
       padding-bottom: 10px;
@@ -69,10 +76,24 @@ body {
       margin: 0;
     }
   }
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+  }
 }
 
 .form {
   display: flex;
+
+  @media (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+
+    .form__button.form__button {
+      margin-top: 10px;
+      margin-left: 0;
+      width: 100%;
+    }
+  }
 
   &__input {
     flex-grow: 1;
@@ -80,6 +101,7 @@ body {
     border-radius: 3px;
     background-color: $background-light;
     font-size: 16px;
+    height: 40px;
     padding-left: 20px;
     padding-right: 20px;
     outline: none;
@@ -131,6 +153,17 @@ body {
       cursor: pointer;
       padding-bottom: 2px;
     }
+
+    @media (max-width: $mobile-breakpoint) {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .btn {
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 10px;
+      }
+    }
   }
 
   &_content {
@@ -172,6 +205,10 @@ body {
       text-align: left;
     }
 
+    td {
+      flex: 0 0 100%;
+    }
+
     .link {
       flex: 1 0 0;
 
@@ -185,6 +222,10 @@ body {
           opacity: 0;
 
           transition: opacity 350ms;
+
+          @media (max-width: $mobile-breakpoint) {
+            display: none;
+          }
         }
 
         &:hover {
@@ -212,6 +253,10 @@ body {
 
     .visits {
       flex: 0 0 120px;
+
+      @media (max-width: $mobile-breakpoint) {
+        display: none;
+      }
     }
 
     .timestamp {
