@@ -1,5 +1,6 @@
 export const ADD_URL = 'ADD_URL';
 export const ADD_URL_FAILED = 'ADD_URL_FAILED';
+export const CLEAR_ALL_URLS = 'CLEAR_ALL_URLS';
 
 function addUrl(url) {
   return {
@@ -17,6 +18,12 @@ function fetchFailed(err) {
     err
   };
 };
+
+export function clearAllUrls() {
+  return {
+    type: CLEAR_ALL_URLS
+  }
+}
 
 export function convertUrl(url) {
   return (dispatch) => {

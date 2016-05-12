@@ -13,7 +13,7 @@ const loggerMiddleware = createLogger();
 const createPersistentStore = compose(
   persistState(undefined, {
     merge(initial, persisted) {
-      return persisted;
+      return persisted ? persisted : [];
     }
   }),
   applyMiddleware(thunkMiddleware, loggerMiddleware)

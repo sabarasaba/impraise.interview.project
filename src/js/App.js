@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { convertUrl } from './actions';
+import { convertUrl, clearAllUrls } from './actions';
+import { deleteLocalstorageKey } from './helpers/utils';
 
 import Header from './components/Header';
 import UrlForm from './components/UrlForm';
@@ -11,6 +12,11 @@ export default class App extends Component {
 
   onAddUrl(url) {
     this.props.dispatch(convertUrl(url));
+  }
+
+  onClearAll() {
+    deleteLocalstorageKey();
+    this.props.dispatch(clearAllUrls());
   }
 
   render() {
@@ -24,6 +30,7 @@ export default class App extends Component {
 
         <UrlTableList
           urls={this.props.urls}
+          onClearAll={this.onClearAll.bind(this)}
         />
       </div>
     );

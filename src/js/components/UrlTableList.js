@@ -5,12 +5,18 @@ import UrlTableListItem from './UrlTableListItem';
 
 class UrlTableList extends Component {
 
+  onClearClick(e) {
+    e.preventDefault();
+
+    this.props.onClearAll();
+  }
+
   render () {
     return (
       <div className="module">
         <div className="module__header">
           <h2 className="title">Previously shortened by you</h2>
-          <button className="btn">Clear history</button>
+          <button className="btn" onClick={this.onClearClick.bind(this)}>Clear history</button>
         </div>
 
           <div className="module__content">
@@ -23,7 +29,7 @@ class UrlTableList extends Component {
                 </tr>
               </thead>
 
-              <ReactCSSTransitionGroup component="tbody" transitionName="transitionIn" transitionEnterTimeout={0} transitionLeaveTimeout={1000}>
+              <ReactCSSTransitionGroup component="tbody" transitionName="transitionIn" transitionEnterTimeout={0} transitionLeaveTimeout={0}>
                 {this.props.urls.map((item, key) => {
                   return <UrlTableListItem key={key} schema={item} />;
                 })}
@@ -38,6 +44,7 @@ class UrlTableList extends Component {
 
 UrlTableList.propTypes = {
   urls: PropTypes.array.isRequired,
+  onClearAll: PropTypes.func.isRequired
 };
 
 export default UrlTableList;
