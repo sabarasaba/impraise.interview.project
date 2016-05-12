@@ -82,6 +82,7 @@
 
     .visits {
       flex: 0 0 120px;
+      text-align: center;
 
       @media (max-width: $mobile-breakpoint) {
         display: none;
