@@ -13,12 +13,8 @@ class UrlForm extends Component {
   }
 
   onInputChange(e) {
-    // this.setState({
-    //   isButtonEnabled: isUrl(e.target.value)
-    // });
-
     this.setState({
-      isButtonEnabled: e.target.value.length > 0
+      isButtonEnabled: isUrl(e.target.value)
     });
   }
 
