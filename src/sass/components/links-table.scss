@@ -95,6 +95,10 @@
     .timestamp {
       flex: 0 0 145px;
       text-align: right;
+
+      @media (max-width: $mobile-breakpoint) {
+        flex: 0 0 110px;
+      }
     }
   }
 }

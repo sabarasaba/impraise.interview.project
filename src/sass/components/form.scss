@@ -32,6 +32,8 @@
     background-color: $brand-color;
     color: #FFFFFF;
 
+    transition: all .3s;
+
     &[disabled] {
       background-color: $disabled-button-background;
       color: $disabled-button-color;
