@@ -1,7 +1,8 @@
 import {
   ADD_URL,
   ADD_URL_FAILED,
-  CLEAR_ALL_URLS
+  CLEAR_ALL_URLS,
+  ADD_DETAILS
 } from '../actions';
 
 export function UrlShortener(state = [], action) {
@@ -11,6 +12,10 @@ export function UrlShortener(state = [], action) {
         ...state,
         action.schema
       ];
+    break;
+
+    case ADD_DETAILS:
+      debugger;
     break;
 
     case CLEAR_ALL_URLS:
