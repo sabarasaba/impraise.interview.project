@@ -11,7 +11,11 @@ import persistState from 'redux-localstorage';
 const loggerMiddleware = createLogger();
 
 const createPersistentStore = compose(
-  persistState(),
+  persistState(undefined, {
+    merge(initial, persisted) {
+      return persisted;
+    }
+  }),
   applyMiddleware(thunkMiddleware, loggerMiddleware)
 )(createStore);
 

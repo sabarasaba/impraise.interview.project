@@ -11,11 +11,6 @@ export function UrlShortener(state = [], action) {
       ];
     break;
 
-    // Bit of an anit
-    case '@@redux/INIT':
-      return Object.keys(state).map(function (key) {return state[key]});
-    break;
-
     default:
       return state;
     break;
