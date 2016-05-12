@@ -1,9 +1,12 @@
 import React, { PropTypes, Component } from 'react';
+import moment from 'moment';
 
 class UrlTableListItem extends Component {
 
   render () {
+    console.log(moment);
     const url = `http://gymia-shorty.herokuapp.com/${this.props.schema.shortcode}`;
+    const timeFromNow = moment(this.props.schema.timestamp).fromNow();
 
     return (
       <tr className="row">
@@ -17,7 +20,7 @@ class UrlTableListItem extends Component {
           </a>
         </td>
         <td className="visits">0</td>
-        <td className="timestamp">2 Hours ago</td>
+        <td className="timestamp">{timeFromNow}</td>
       </tr>
     );
   }

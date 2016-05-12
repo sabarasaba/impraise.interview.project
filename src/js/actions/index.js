@@ -12,7 +12,6 @@ function addUrl(url) {
 };
 
 function fetchFailed(err) {
-  debugger;
   return {
     type: ADD_URL_FAILED,
     err
