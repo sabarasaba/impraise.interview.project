@@ -12,6 +12,7 @@ function addUrl(url) {
 };
 
 function fetchFailed(err) {
+  debugger;
   return {
     type: ADD_URL_FAILED,
     err
@@ -21,16 +22,16 @@ function fetchFailed(err) {
 export function convertUrl(url) {
   return (dispatch) => {
     fetch('/api/shorten', {
-        method: 'post',
-        headers: {
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify({
-         url: 'https://gist.github.com'
-        })
+      method: 'post',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+       url
       })
-      .then(response => response.json())
-      .then(json => dispatch(addUrl(json)))
-      .catch(err => dispatch(fetchFailed(err)))
+    })
+    .then(response => response.json())
+    .then(json => dispatch(addUrl(Object.assign({}, json, {originalUrl: url}))))
+    .catch(err => dispatch(fetchFailed(err)))
   };
 };

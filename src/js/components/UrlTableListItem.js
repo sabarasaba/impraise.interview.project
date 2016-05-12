@@ -3,15 +3,17 @@ import React, { PropTypes, Component } from 'react';
 class UrlTableListItem extends Component {
 
   render () {
+    const url = `http://gymia-shorty.herokuapp.com/${this.props.schema.shortcode}`;
+
     return (
       <tr className="row">
         <td className="link">
-          <a href="#" className="click-out">
+          <a href={url} className="click-out">
             <span className="hover-content">Click to copy this link</span>
             <span className="shortened">
-              https://shooooort.com/<strong>aSDJnpAn73</strong>
+              https://shooooort.com/<strong>{this.props.schema.shortcode}</strong>
             </span>
-            <span className="original">{this.props.schema}</span>
+            <span className="original">{this.props.schema.originalUrl}</span>
           </a>
         </td>
         <td className="visits">0</td>
@@ -22,7 +24,7 @@ class UrlTableListItem extends Component {
 };
 
 UrlTableListItem.propTypes = {
-  schema: PropTypes.string.isRequired
+  schema: PropTypes.object.isRequired
 };
 
 export default UrlTableListItem;
