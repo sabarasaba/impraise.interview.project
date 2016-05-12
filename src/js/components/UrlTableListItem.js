@@ -19,7 +19,7 @@ class UrlTableListItem extends Component {
 
   render () {
     const shortUrl = `http://gymia-shorty.herokuapp.com/${this.props.schema.shortcode}`;
-    const timeFromNow = moment(this.props.schema.timestamp).fromNow();
+    const timeFromNow = (!this.props.schema.timestamp) ? 'never' : moment(this.props.schema.timestamp).fromNow();
 
     return (
       <tr className="row">
