@@ -14,7 +14,9 @@ class UrlTableListItem extends Component {
   }
 
   onLinkClick(e) {
-    e.preventDefault();
+    if (e.target.className === 'hover-content') {
+      e.preventDefault();
+    }
   }
 
   render () {
