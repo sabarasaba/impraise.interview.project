@@ -1,10 +1,19 @@
 import React, { PropTypes, Component } from 'react';
+
 import ClipboardButton from 'react-clipboard.js';
 import moment from 'moment';
 
 class UrlTableListItem extends Component {
 
-  onCopyClick(e) {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showNotification: false
+    };
+  }
+
+  onLinkClick(e) {
     e.preventDefault();
   }
 
@@ -15,12 +24,10 @@ class UrlTableListItem extends Component {
     return (
       <tr className="row">
         <td className="link">
-          <a href={shortUrl} className="click-out">
-            <span className="hover-content" onClick={this.onCopyClick.bind(this)}>
-              <ClipboardButton type={'div'} component="div" data-clipboard-text={shortUrl}>
-                Click to copy this link
-              </ClipboardButton>
-            </span>
+          <a href={shortUrl} onClick={this.onLinkClick.bind(this)} className="click-out">
+            <ClipboardButton type={'div'} className="hover-content" component="div" data-clipboard-text={shortUrl}>
+              Click to copy this link
+            </ClipboardButton>
             <span className="shortened">
               https://shooooort.com/<strong>{this.props.schema.shortcode}</strong>
             </span>
