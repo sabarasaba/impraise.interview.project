@@ -36,6 +36,7 @@
 
     .link {
       flex: 1 0 0;
+      overflow: hidden;
 
       .click-out {
         .hover-content {
@@ -72,6 +73,9 @@
         .original {
           display: block;
           color: $nonimportant-text-color;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
     }
