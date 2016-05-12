@@ -4,7 +4,3 @@ export function isUrl(anotherone) {
 
   return anotherone.match(regex);
 };
-
-export function deleteLocalstorageKey() {
-  localStorage.removeItem('redux');
-}

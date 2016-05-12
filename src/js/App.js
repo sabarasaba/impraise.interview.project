@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { convertUrl, clearAllUrls } from './actions';
-import { deleteLocalstorageKey } from './helpers/utils';
 
 import Header from './components/Header';
 import UrlForm from './components/UrlForm';
@@ -15,7 +14,6 @@ export default class App extends Component {
   }
 
   onClearAll() {
-    deleteLocalstorageKey();
     this.props.dispatch(clearAllUrls());
   }
 

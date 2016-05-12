@@ -29,7 +29,7 @@ class UrlTableList extends Component {
                 </tr>
               </thead>
 
-              <ReactCSSTransitionGroup component="tbody" transitionName="transitionIn" transitionEnterTimeout={0} transitionLeaveTimeout={0}>
+              <ReactCSSTransitionGroup component="tbody" transitionName="transitionIn" transitionEnterTimeout={0} transitionLeaveTimeout={1}>
                 {this.props.urls.map((item, key) => {
                   return <UrlTableListItem key={key} schema={item} />;
                 })}
