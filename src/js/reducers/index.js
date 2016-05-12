@@ -6,6 +6,10 @@ import {
 } from '../actions';
 
 export function UrlShortener(state = [], action) {
+  if (!action) {
+    return state;
+  }
+
   switch (action.type) {
     case ADD_URL:
       return [

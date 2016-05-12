@@ -26,6 +26,8 @@ $ npm test
 * There is no visual feedback if an error occurs when hitting the API (the app its actually dispatching an event that its being catched by the reducer though).
 * Stats of each link are not updated in realtime, if the API supported WS it could've been something I could've done as well.
 * The regex for validating url's is not awesome, and might not recognize some urls.
+* Hardcoded urls and project name in a few places, ideally it would be in just one place.
+* No full test coverage.
 
 ### Dependencies
 
