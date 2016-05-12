@@ -4,6 +4,7 @@ Impraise interview project
 Based on Dan's https://github.com/gaearon/react-hot-boilerplate
 
 ### Usage
+I've tried it with node 5 and works fine, pretty sure it should work with older versions as well.
 
 ```
 $ npm install
