@@ -63,6 +63,9 @@
         .shortened {
           display: block;
           font-weight: 400;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
 
           strong {
             color: $brand-color;
@@ -85,7 +88,7 @@
       text-align: center;
 
       @media (max-width: $mobile-breakpoint) {
-        display: none;
+        flex: 0 0 50px;
       }
     }
 
