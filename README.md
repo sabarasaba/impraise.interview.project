@@ -22,12 +22,12 @@ $ npm test
 ### Things that could be improved
 
 * Theres no visual feedback when a url is copied to the clipboard, ideally you would have some sort of `popover` or `notification` somewhere telling you that it got copied.
-* Theres are no loading state when a url is submitted and the request is currently being fetched.
-* There is no visual feedback if an error occurs when hitting the API (the app its actually dispatching an event that its being catched by the reducer though).
-* Stats of each link are not updated in realtime, if the API supported WS it could've been something I could've done as well.
-* The regex for validating url's is not awesome, and might not recognize some urls.
+* Theres is no loading state when a url is submitted and the request is running.
+* There is no visual feedback if an error occurs when hitting the API (the app its actually dispatching an event that its being catched by the reducer and logs it to the console though).
+* Stats of each link are not updated in realtime, if the API supported WS it could've been something I could've done as well `long polling` could've been a possible solution too..
 * Hardcoded urls and project name in a few places, ideally it would be in just one place.
 * No full test coverage.
+* All the components are hanging in the App.js file, ideally it would be inside a view that the App invokes through a router or something.
 
 ### Dependencies
 
