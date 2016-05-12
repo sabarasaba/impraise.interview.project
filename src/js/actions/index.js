@@ -7,7 +7,7 @@ function addUrl(url) {
   return {
     type: ADD_URL,
     schema: Object.assign({}, url, {
-      timestamp: null,
+      timestamp: new Date().getTime(),
       visits: 0
     })
   };
@@ -61,7 +61,7 @@ export function getUrlStats(shortcode) {
       }
     })
     .then(response => response.json())
-    .then(json => dispatch(addUrl(Object.assign({}, json, {shortcode}))))
+    .then(json => dispatch(addDetails(Object.assign({}, json, {shortcode}))))
     .catch(err => dispatch(fetchFailed(err)))
   };
 };

@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { convertUrl, clearAllUrls } from './actions';
+import { convertUrl, getUrlStats, clearAllUrls } from './actions';
 
 import Header from './components/Header';
 import UrlForm from './components/UrlForm';
 import UrlTableList from './components/UrlTableList';
 
 export default class App extends Component {
+
+  componentDidMount() {
+    this.props.urls.map((e) => {
+      this.props.dispatch(getUrlStats(e.shortcode));
+    });
+  }
 
   onAddUrl(url) {
     this.props.dispatch(convertUrl(url));

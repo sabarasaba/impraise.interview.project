@@ -15,7 +15,14 @@ export function UrlShortener(state = [], action) {
     break;
 
     case ADD_DETAILS:
-      debugger;
+      return state.map(e => {
+        if (e.shortcode === action.forShortcode) {
+          e.timestamp = action.timestamp;
+          e.visits = action.visits;
+        }
+
+        return e;
+      });
     break;
 
     case CLEAR_ALL_URLS:
