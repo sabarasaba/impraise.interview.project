@@ -4,7 +4,6 @@ import moment from 'moment';
 class UrlTableListItem extends Component {
 
   render () {
-    console.log(moment);
     const url = `http://gymia-shorty.herokuapp.com/${this.props.schema.shortcode}`;
     const timeFromNow = moment(this.props.schema.timestamp).fromNow();
 
