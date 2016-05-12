@@ -7,7 +7,7 @@ export function UrlShortener(state = [], action) {
     case ADD_URL:
       return [
         ...state,
-        action.url
+        action.schema
       ];
     break;
 
