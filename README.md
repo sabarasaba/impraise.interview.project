@@ -26,6 +26,7 @@ $ npm test
 * There is no visual feedback if an error occurs when hitting the API (the app its actually dispatching an event that its being catched by the reducer and logs it to the console though).
 * Stats of each link are not updated in realtime, if the API supported WS it could've been something I could've done as well `long polling` could've been a possible solution too..
 * Hardcoded urls and project name in a few places, ideally it would be in just one place.
+* Urls will port's will not be recognized by the regex :(
 * No full test coverage.
 * All the components are hanging in the App.js file, ideally it would be inside a view that the App invokes through a router or something.
 
