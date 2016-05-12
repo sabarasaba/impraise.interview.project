@@ -4,13 +4,13 @@ import moment from 'moment';
 class UrlTableListItem extends Component {
 
   render () {
-    const url = `http://gymia-shorty.herokuapp.com/${this.props.schema.shortcode}`;
+    const shortUrl = `http://gymia-shorty.herokuapp.com/${this.props.schema.shortcode}`;
     const timeFromNow = moment(this.props.schema.timestamp).fromNow();
 
     return (
       <tr className="row">
         <td className="link">
-          <a href={url} className="click-out">
+          <a href={shortUrl} className="click-out">
             <span className="hover-content">Click to copy this link</span>
             <span className="shortened">
               https://shooooort.com/<strong>{this.props.schema.shortcode}</strong>
