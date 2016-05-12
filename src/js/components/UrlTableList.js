@@ -5,18 +5,12 @@ import UrlTableListItem from './UrlTableListItem';
 
 class UrlTableList extends Component {
 
-  onClearClick(e) {
-    e.preventDefault();
-
-    this.props.onClearAll();
-  }
-
   render () {
     return (
       <div className="module">
         <div className="module__header">
           <h2 className="title">Previously shortened by you</h2>
-          <button className="btn" onClick={this.onClearClick.bind(this)}>Clear history</button>
+          <button className="btn" onClick={this.props.onClearAll}>Clear history</button>
         </div>
 
           <div className="module__content">
