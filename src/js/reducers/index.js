@@ -1,5 +1,6 @@
 import {
   ADD_URL,
+  ADD_URL_FAILED,
   CLEAR_ALL_URLS
 } from '../actions';
 
@@ -14,6 +15,12 @@ export function UrlShortener(state = [], action) {
 
     case CLEAR_ALL_URLS:
       return [];
+    break;
+
+    case ADD_URL_FAILED:
+      console.log(action.err);
+
+      return state;
     break;
 
     default:
